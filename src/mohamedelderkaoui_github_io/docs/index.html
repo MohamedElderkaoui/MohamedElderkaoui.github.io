@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Mohamed Merzouk Bendoukha | Developer Portfolio</title>
+
+<meta name="description" content="Técnico Superior en Desarrollo de Aplicaciones Web con formación complementaria en inteligencia artificial, Python y ciberseguridad defensiva.">
+<meta name="author" content="Mohamed Merzouk Bendoukha">
+<meta name="theme-color" content="#4aab9c">
+<meta property="og:title" content="Mohamed Merzouk Bendoukha | Portfolio">
+<meta property="og:description" content="Técnico Superior en Desarrollo de Aplicaciones Web con formación complementaria en inteligencia artificial, Python y ciberseguridad defensiva.">
+<meta property="og:type" content="website">
+
+<style>
+:root {
+    --bg: #0b1120;
+    --surface: #111b2e;
+    --surface-light: #18243a;
+    --text: #e7edf7;
+    --muted: #a6b3c8;
+    --accent: #4aab9c;
+    --border: rgba(255,255,255,.10);
+    --radius: 18px;
+    --max-width: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(11,17,32,.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+.nav-links a:hover,
+.text-link:hover {
+    color: var(--accent);
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding: 90px 0;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    max-width: 900px;
+    margin: 18px 0;
+    font-size: clamp(2.7rem, 7vw, 5.7rem);
+    line-height: 1.04;
+    letter-spacing: -3px;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 19px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: transform .2s, background .2s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button.primary {
+    background: var(--accent);
+    color: #07111d;
+    border-color: transparent;
+}
+
+section {
+    padding: 75px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    margin-bottom: 34px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    margin: 8px 0;
+    letter-spacing: -1px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.project-card,
+.skill-group {
+    padding: 25px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: var(--radius);
+    transition: transform .2s, border-color .2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.project-card h3,
+.skill-group h3,
+.timeline-item h3 {
+    line-height: 1.35;
+}
+
+.project-card p,
+.timeline-item p {
+    color: var(--muted);
+    font-size: .94rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 9px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--muted);
+    font-size: .76rem;
+}
+
+.text-link {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.timeline {
+    display: grid;
+    gap: 16px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-item h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.timeline-item p {
+    margin-bottom: 0;
+}
+
+.date {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.contact-panel {
+    padding: clamp(25px, 6vw, 55px);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--surface), #111a2b);
+}
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 90px 0;
+    }
+
+    h1 {
+        letter-spacing: -1.5px;
+    }
+}
+
+@media (max-width: 520px) {
+    .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<nav aria-label="Main navigation">
+    <div class="container nav-inner">
+        <a class="logo" href="#home">ME<span>.</span></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="hero container" id="home">
+        <div>
+            <span class="eyebrow">Available for opportunities</span>
+            <h1>Building digital<br>
+                <span>solutions that matter.</span>
+            </h1>
+            <p>Técnico Superior en Desarrollo de Aplicaciones Web con formación complementaria en inteligencia artificial, Python y ciberseguridad defensiva.</p>
+            <p>📍 Ejea de los Caballeros, Zaragoza, Spain</p>
+            <div class="actions">
+                <a class="button primary" href="#projects">
+                    Explore my work
+                </a>
+                <a class="button"
+                   href="mailto:mderkaoui10@gmail.com">
+                    Contact me
+                </a>
+                <a class="button"
+                   href="https://github.com/MohamedElderkaoui"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub ↗
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">01 / About</span>
+                <h2>Web Developer | Artificial Intelligence | Cybersecurity</h2>
+            </div>
+            <p class="muted">Técnico Superior en Desarrollo de Aplicaciones Web con formación complementaria en inteligencia artificial, Python y ciberseguridad defensiva.</p>
+            <p class="muted">
+                Interested in software development, computer vision,
+                technical problem-solving and defensive cybersecurity.
+                Focused on continuous learning and building practical
+                projects.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">02 / Selected work</span>
+                <h2>Projects</h2>
+                <p class="muted">
+                    Projects and technical areas I am developing.
+                </p>
+            </div>
+            <div class="project-grid">
+                
+        <article class="project-card">
+            <span class="eyebrow">
+                Artificial Intelligence
+            </span>
+
+            <h3>AccessAI</h3>
+
+            <p>Prototipo de visión artificial para detectar elementos urbanos relacionados con la accesibilidad en imágenes y vídeos.</p>
+
+            <div class="tags"><span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span><span class="tag">Streamlit</span></div>
+
+            <a class="text-link"
+               href="https://github.com/MohamedElderkaoui"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub ↗
+            </a>
+        </article>
+        
+        <article class="project-card">
+            <span class="eyebrow">
+                Web Development
+            </span>
+
+            <h3>Web Development Portfolio</h3>
+
+            <p>Portfolio personal para presentar proyectos, competencias técnicas y formación profesional.</p>
+
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+
+            <a class="text-link"
+               href="https://github.com/MohamedElderkaoui"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub ↗
+            </a>
+        </article>
+        
+        <article class="project-card">
+            <span class="eyebrow">
+                Cybersecurity
+            </span>
+
+            <h3>Cybersecurity Learning</h3>
+
+            <p>Formación en seguridad defensiva, análisis forense digital, monitorización y respuesta a incidentes.</p>
+
+            <div class="tags"><span class="tag">Blue Team</span><span class="tag">Splunk</span><span class="tag">Sigma</span><span class="tag">Nessus</span></div>
+
+            <a class="text-link"
+               href="https://github.com/MohamedElderkaoui"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub ↗
+            </a>
+        </article>
+        
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">03 / Technical toolkit</span>
+                <h2>Skills & technologies</h2>
+            </div>
+            <div class="skills-grid">
+                
+        <div class="skill-group">
+            <h3>Web Development</h3>
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">REST APIs</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Artificial Intelligence</h3>
+            <div class="tags"><span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span><span class="tag">Streamlit</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">Computer Vision</span><span class="tag">Machine Learning</span></div>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Cybersecurity</h3>
+            <div class="tags"><span class="tag">Blue Team</span><span class="tag">Splunk</span><span class="tag">Nessus</span><span class="tag">Sigma Rules</span><span class="tag">Digital Forensics</span><span class="tag">Incident Response</span><span class="tag">IDS</span><span class="tag">Vulnerability Management</span></div>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">04 / Learning journey</span>
+                <h2>Education & training</h2>
+            </div>
+            <div class="timeline">
+                
+        <article class="timeline-item">
+            <span class="date">2025–2026</span>
+            <div>
+                <h3>III Diploma de Extensión Universitaria en Inteligencia Artificial Avanzada</h3>
+                <p>Samsung Innovation Campus · Universidad de Málaga · Fundación ONCE · Samsung</p>
+            </div>
+        </article>
+        
+        <article class="timeline-item">
+            <span class="date">2025–2026</span>
+            <div>
+                <h3>III Microcredencial Universitaria en Introducción a la Programación en Python para Inteligencia Artificial</h3>
+                <p>Universidad de Málaga · Fundación ONCE · Samsung</p>
+            </div>
+        </article>
+        
+        <article class="timeline-item">
+            <span class="date">2025</span>
+            <div>
+                <h3>Experto en Blue Team — 250 horas</h3>
+                <p>Inserta · INCIBE · Arelance</p>
+            </div>
+        </article>
+        
+        <article class="timeline-item">
+            <span class="date">2025</span>
+            <div>
+                <h3>Digital Forensic and Incident Response — 300 horas</h3>
+                <p>Inserta · INCIBE · Arelance</p>
+            </div>
+        </article>
+        
+        <article class="timeline-item">
+            <span class="date">2019–2024</span>
+            <div>
+                <h3>Técnico Superior en Desarrollo de Aplicaciones Web</h3>
+                <p>CPIFP Los Enlaces / IES Río Arba</p>
+            </div>
+        </article>
+        
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-panel">
+                <span class="eyebrow">05 / Contact</span>
+                <h2>Let's build something useful.</h2>
+                <p class="muted">
+                    Interested in junior opportunities in web development,
+                    AI or cybersecurity? Get in touch.
+                </p>
+                <div class="actions">
+                    <a class="button primary"
+                       href="mailto:mderkaoui10@gmail.com">
+                        Send an email
+                    </a>
+                    <a class="button"
+                       href="https://www.linkedin.com/in/mohamed-merzouk-bendoukh-ejea-aragon"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        LinkedIn ↗
+                    </a>
+                    <a class="button"
+                       href="https://github.com/MohamedElderkaoui"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <span>© <span id="year"></span> Mohamed Merzouk Bendoukha</span>
+        <span>Designed with HTML, CSS and JavaScript.</span>
+    </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+</body>
+</html>
