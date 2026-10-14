@@ -11,7 +11,7 @@
 #   uv run python streamlit_to_html.py --source streamlit_app.py
 #
 # Salida:
-#   dist/index.html
+#   doc/index.html
 #
 # IMPORTANTE:
 # GitHub Pages solo publica archivos estáticos. Este script exporta la
@@ -878,7 +878,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("dist"),
+        default=Path("doc"),
         help="Carpeta de salida para GitHub Pages.",
     )
     parser.add_argument(
@@ -975,7 +975,7 @@ def main() -> int:
     print(f"Origen Streamlit: {args.source.resolve()}")
     print()
     print("Siguiente paso:")
-    print("1. Publica el contenido de la carpeta dist en GitHub Pages.")
+    print("1. Publica el contenido de la carpeta doc en GitHub Pages.")
     print("2. Usa la rama y carpeta configuradas en Settings > Pages.")
     print("3. Recuerda: el backend Python/YOLO de Streamlit no se ejecuta en Pages.")
     return 0
