@@ -1,0 +1,17 @@
+[project]
+name = "mohamedelderkaoui-github-io"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "MohamedElderkaoui", email = "mderkaoui10@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+mohamedelderkaoui-github-io = "mohamedelderkaoui_github_io:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
